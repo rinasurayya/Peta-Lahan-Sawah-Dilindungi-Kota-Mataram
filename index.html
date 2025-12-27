@@ -38,8 +38,8 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
-        <script src="data/RDTR_Kota_Mataram_1.js"></script>
-        <script src="data/LSD_Kota_Mataram_2.js"></script>
+        <script src="data/RDTR_Kota_Mataram__2.js"></script>
+        <script src="data/LSD_Kota_Mataram_3.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -175,7 +175,19 @@
         });
         layer_GoogleRoad_0;
         map.addLayer(layer_GoogleRoad_0);
-        function pop_RDTR_Kota_Mataram_1(feature, layer) {
+        map.createPane('pane_GoogleSatellite_1');
+        map.getPane('pane_GoogleSatellite_1').style.zIndex = 401;
+        var layer_GoogleSatellite_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatellite_1',
+            opacity: 1.0,
+            attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 20
+        });
+        layer_GoogleSatellite_1;
+        function pop_RDTR_Kota_Mataram__2(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -200,11 +212,11 @@
                     </tr>\
                     <tr>\
                         <th scope="row">Kecamatan</th>\
-                        <td>' + (feature.properties['WADMKC'] !== null ? autolinker.link(String(feature.properties['WADMKC']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td>' + (feature.properties['Kecamatan'] !== null ? autolinker.link(String(feature.properties['Kecamatan']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Kelurahan</th>\
-                        <td class="visible-with-data" id="WADMKD">' + (feature.properties['WADMKD'] !== null ? autolinker.link(String(feature.properties['WADMKD']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td>' + (feature.properties['Kelurahan'] !== null ? autolinker.link(String(feature.properties['Kelurahan']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -214,11 +226,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_RDTR_Kota_Mataram_1_0() {
+        function style_RDTR_Kota_Mataram__2_0() {
             return {
-                pane: 'pane_RDTR_Kota_Mataram_1',
+                pane: 'pane_RDTR_Kota_Mataram__2',
                 opacity: 1,
-                color: 'rgba(82,82,82,1.0)',
+                color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
@@ -229,20 +241,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_RDTR_Kota_Mataram_1');
-        map.getPane('pane_RDTR_Kota_Mataram_1').style.zIndex = 401;
-        map.getPane('pane_RDTR_Kota_Mataram_1').style['mix-blend-mode'] = 'normal';
-        var layer_RDTR_Kota_Mataram_1 = new L.geoJson(json_RDTR_Kota_Mataram_1, {
+        map.createPane('pane_RDTR_Kota_Mataram__2');
+        map.getPane('pane_RDTR_Kota_Mataram__2').style.zIndex = 402;
+        map.getPane('pane_RDTR_Kota_Mataram__2').style['mix-blend-mode'] = 'normal';
+        var layer_RDTR_Kota_Mataram__2 = new L.geoJson(json_RDTR_Kota_Mataram__2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_RDTR_Kota_Mataram_1',
-            layerName: 'layer_RDTR_Kota_Mataram_1',
-            pane: 'pane_RDTR_Kota_Mataram_1',
-            onEachFeature: pop_RDTR_Kota_Mataram_1,
-            style: style_RDTR_Kota_Mataram_1_0,
+            dataVar: 'json_RDTR_Kota_Mataram__2',
+            layerName: 'layer_RDTR_Kota_Mataram__2',
+            pane: 'pane_RDTR_Kota_Mataram__2',
+            onEachFeature: pop_RDTR_Kota_Mataram__2,
+            style: style_RDTR_Kota_Mataram__2_0,
         });
-        bounds_group.addLayer(layer_RDTR_Kota_Mataram_1);
-        function pop_LSD_Kota_Mataram_2(feature, layer) {
+        bounds_group.addLayer(layer_RDTR_Kota_Mataram__2);
+        function pop_LSD_Kota_Mataram_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -273,7 +285,7 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        var pattern_LSD_Kota_Mataram_2_0 = new L.StripePattern({
+        var pattern_LSD_Kota_Mataram_3_0 = new L.StripePattern({
             weight: 0.3,
             spaceWeight: 2.0,
             color: '#32c602',
@@ -281,17 +293,17 @@
             spaceOpacity: 0,
             angle: 315
         });
-        pattern_LSD_Kota_Mataram_2_0.addTo(map);
-        function style_LSD_Kota_Mataram_2_0() {
+        pattern_LSD_Kota_Mataram_3_0.addTo(map);
+        function style_LSD_Kota_Mataram_3_0() {
             return {
-                pane: 'pane_LSD_Kota_Mataram_2',
+                pane: 'pane_LSD_Kota_Mataram_3',
                 stroke: false,
                 fillOpacity: 1,
-                fillPattern: pattern_LSD_Kota_Mataram_2_0,
+                fillPattern: pattern_LSD_Kota_Mataram_3_0,
                 interactive: true,
             }
         }
-        var pattern_LSD_Kota_Mataram_2_1 = new L.StripePattern({
+        var pattern_LSD_Kota_Mataram_3_1 = new L.StripePattern({
             weight: 0.3,
             spaceWeight: 2.0,
             color: '#32c602',
@@ -299,19 +311,19 @@
             spaceOpacity: 0,
             angle: 225
         });
-        pattern_LSD_Kota_Mataram_2_1.addTo(map);
-        function style_LSD_Kota_Mataram_2_1() {
+        pattern_LSD_Kota_Mataram_3_1.addTo(map);
+        function style_LSD_Kota_Mataram_3_1() {
             return {
-                pane: 'pane_LSD_Kota_Mataram_2',
+                pane: 'pane_LSD_Kota_Mataram_3',
                 stroke: false,
                 fillOpacity: 1,
-                fillPattern: pattern_LSD_Kota_Mataram_2_1,
+                fillPattern: pattern_LSD_Kota_Mataram_3_1,
                 interactive: true,
             }
         }
-        function style_LSD_Kota_Mataram_2_2() {
+        function style_LSD_Kota_Mataram_3_2() {
             return {
-                pane: 'pane_LSD_Kota_Mataram_2',
+                pane: 'pane_LSD_Kota_Mataram_3',
                 opacity: 1,
                 color: 'rgba(50,198,2,1.0)',
                 dashArray: '',
@@ -322,20 +334,20 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_LSD_Kota_Mataram_2');
-        map.getPane('pane_LSD_Kota_Mataram_2').style.zIndex = 402;
-        map.getPane('pane_LSD_Kota_Mataram_2').style['mix-blend-mode'] = 'normal';
-        var layer_LSD_Kota_Mataram_2 = new L.geoJson.multiStyle(json_LSD_Kota_Mataram_2, {
+        map.createPane('pane_LSD_Kota_Mataram_3');
+        map.getPane('pane_LSD_Kota_Mataram_3').style.zIndex = 403;
+        map.getPane('pane_LSD_Kota_Mataram_3').style['mix-blend-mode'] = 'normal';
+        var layer_LSD_Kota_Mataram_3 = new L.geoJson.multiStyle(json_LSD_Kota_Mataram_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_LSD_Kota_Mataram_2',
-            layerName: 'layer_LSD_Kota_Mataram_2',
-            pane: 'pane_LSD_Kota_Mataram_2',
-            onEachFeature: pop_LSD_Kota_Mataram_2,
-            styles: [style_LSD_Kota_Mataram_2_0,style_LSD_Kota_Mataram_2_1,style_LSD_Kota_Mataram_2_2,]
+            dataVar: 'json_LSD_Kota_Mataram_3',
+            layerName: 'layer_LSD_Kota_Mataram_3',
+            pane: 'pane_LSD_Kota_Mataram_3',
+            onEachFeature: pop_LSD_Kota_Mataram_3,
+            styles: [style_LSD_Kota_Mataram_3_0,style_LSD_Kota_Mataram_3_1,style_LSD_Kota_Mataram_3_2,]
         });
-        bounds_group.addLayer(layer_LSD_Kota_Mataram_2);
-        map.addLayer(layer_LSD_Kota_Mataram_2);
+        bounds_group.addLayer(layer_LSD_Kota_Mataram_3);
+        map.addLayer(layer_LSD_Kota_Mataram_3);
         const url = {"Nominatim OSM": "https://nominatim.openstreetmap.org/search?format=geojson&addressdetails=1&",
         "France BAN": "https://api-adresse.data.gouv.fr/search/?"}
         var photonControl = L.control.photon({
@@ -390,8 +402,9 @@
             }
         });
         var overlaysTree = [
-            {label: '<img src="legend/LSD_Kota_Mataram_2.png" /> LSD_Kota_Mataram', layer: layer_LSD_Kota_Mataram_2},
-            {label: '<img src="legend/RDTR_Kota_Mataram_1.png" /> RDTR_Kota_Mataram', layer: layer_RDTR_Kota_Mataram_1},
+            {label: '<img src="legend/LSD_Kota_Mataram_3.png" /> LSD_Kota_Mataram', layer: layer_LSD_Kota_Mataram_3},
+            {label: '<img src="legend/RDTR_Kota_Mataram__2.png" /> RDTR_Kota_Mataram_', layer: layer_RDTR_Kota_Mataram__2},
+            {label: "Google Satellite", layer: layer_GoogleSatellite_1},
             {label: "Google Road", layer: layer_GoogleRoad_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
